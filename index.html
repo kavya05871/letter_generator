@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Letter Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Letter Generator</h1>
+      <div class="tiny">Create, preview, and export professional letters</div>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <div>
+          <label for="template">Template</label>
+          <select id="template">
+            <option value="formal">Formal - Business</option>
+            <option value="leave">Leave Application</option>
+            <option value="recommend">Recommendation</option>
+            <option value="informal">Informal / Personal</option>
+          </select>
+        </div>
+
+        <div style="margin-top:12px">
+          <label for="date">Date</label>
+          <input id="date" type="text" placeholder="e.g. November 12, 2025" />
+        </div>
+
+        <div class="row" style="margin-top:12px">
+          <div>
+            <label for="toName">Recipient (To)</label>
+            <input id="toName" type="text" placeholder="Recipient name / designation" />
+          </div>
+          <div>
+            <label for="fromName">Sender (From)</label>
+            <input id="fromName" type="text" placeholder="Your name / designation" />
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label for="subject">Subject</label>
+          <input id="subject" type="text" placeholder="Subject of the letter" />
+        </div>
+
+        <div style="margin-top:12px">
+          <label for="body">Body</label>
+          <textarea id="body" placeholder="Write your letter here or choose a template and edit..."></textarea>
+        </div>
+
+        <div style="margin-top:12px">
+          <label for="signature">Signature</label>
+          <input id="signature" type="text" placeholder="Your name / position" />
+        </div>
+
+        <div class="controls">
+          <button id="apply">Apply to Preview</button>
+          <button id="copy" class="ghost">Copy Text</button>
+          <button id="exportTxt" class="ghost">Export .txt</button>
+          <button id="download" class="ghost">Download as PDF</button>
+        </div>
+
+        <div style="margin-top:12px">
+          <div class="tiny">Quick templates</div>
+          <div class="template-list">
+            <button class="chip" data-tpl="formal">Formal</button>
+            <button class="chip" data-tpl="leave">Leave</button>
+            <button class="chip" data-tpl="recommend">Recommendation</button>
+            <button class="chip" data-tpl="informal">Personal</button>
+          </div>
+        </div>
+
+        <footer class="tiny">Tip: Use "Download as PDF" to export the letter (it opens the print dialog; choose "Save as PDF").</footer>
+      </div>
+
+      <div class="card">
+        <div class="preview" id="preview">
+          <div class="letter" id="letter">
+            <div class="meta tiny" id="metaTop">Date: <span id="pDate">--</span></div>
+            <div class="to" id="pTo">To: <strong>Recipient Name</strong></div>
+            <div class="subject" id="pSubject">Subject: <span>Subject goes here</span></div>
+            <div class="body" id="pBody">Start writing your letter or click a template to load sample text.</div>
+            <div class="signature" id="pSign">Sincerely,<br><strong id="pFrom">Your Name</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
